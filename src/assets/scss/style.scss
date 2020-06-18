@@ -57,8 +57,13 @@ header{
     .navbar{
         height: 80px;
 
-        .navbar-nav {
+        ul.navbar-nav {
             li.nav-item {
+                &.active{
+                    a.nav-link {
+                    color: $primary;
+                    }
+                }
                 a {
                     &.nav-link{
                         color: $gray-900;

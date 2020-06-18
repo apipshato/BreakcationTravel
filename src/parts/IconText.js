@@ -4,7 +4,7 @@ import Button from "elements/Button";
 export default function IconText() {
   return (
     <Button className="brand-text-icon" href="" type="link">
-      Break <span className="text-gray-900">cation. </span>
+      Break<span className="text-gray-900">cation. </span>
     </Button>
   );
 }
