@@ -5,14 +5,20 @@ import Hero from "parts/Hero";
 import MostPicked from "parts/MostPicked";
 import Catagories from "parts/Catagories";
 import Testimony from "parts/Testimoni";
-import Footer from 'parts/Footer'
+import Footer from 'parts/Footer';
 
 
-export default class LandingPage extends Component {
+export default class LandingPages extends Component {
   constructor(props) {
     super(props);
     this.refMostPicked = React.createRef();
   }
+  componentDidMount() {
+    window.title = "Breakcation | Home";
+    window.scrollTo(0, 0);
+
+  }
+
   render() {
     return (
       <>
