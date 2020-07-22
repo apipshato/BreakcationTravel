@@ -1,4 +1,5 @@
 .container-grid {
+    margin-bottom: 40px;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     grid-auto-rows: minmax(185px, auto);

@@ -78,7 +78,7 @@ export default function Footer() {
         </div>
         <div className="row">
           <div className="col text-center copyrights">
-            Copyright 2019 • All rights reserved • Breakcation
+            Copyright 2020 • All rights reserved • Breakcation
           </div>
         </div>
       </div>
