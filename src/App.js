@@ -10,6 +10,7 @@ function App() {
       <Router>
       <Route exact path="/" component={landingPages} />
         <Route exact path="/properties/:id" component={DetailPage} />
+    
       </Router>
     </div>
   );

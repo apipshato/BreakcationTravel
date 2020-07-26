@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import propType from "prop-types";
+import propTypes from "prop-types";
 import { DateRange } from "react-date-range";
 import "./index.scss";
 import "react-date-range/dist/style.css";
@@ -7,7 +7,6 @@ import "react-date-range/dist/theme/default.css";
 
 import formatDate from "Utils/formatDate;";
 import iconCalendar from "assets/images/icons/ic_calendar.svg";
-
 export default function Date(props) {
   const { value, placeholder, name } = props;
   const [isShowed, setIsShowed] = useState(false);
@@ -81,10 +80,9 @@ export default function Date(props) {
   );
 }
 
-Date.propType = {
-  value: propType.object,
-  onChange: propType.func,
-  isSuffixPlural: propType.bool,
-  placeholder: propType.string,
-  outerClassName: propType.string,
+Date.propTypes = {
+  value: propTypes.object,
+  onChange: propTypes.func,
+  placeholder: propTypes.string,
+  outerClassName: propTypes.string,
 };
