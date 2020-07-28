@@ -14,8 +14,7 @@ export default function PageDetailTitle({ data, breadcumb }) {
             <h1 className="h2">{data.name}</h1>
             <span className="text-gray-400">
                 {data.city}, {data.country}
-
-            </span>
+            </span>{" "}
           </div>
           <div className="col"></div>
         </div>

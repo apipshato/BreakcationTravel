@@ -1,24 +1,19 @@
 import React from "react";
 import { render, fireEvent } from "@testing-library/react";
-import { screen } from '@testing-library/dom'
-import InputDate from "./index";
+import InputNumber from "./index";
 
 class TestInput extends React.Component {
   state = {
-    value: {
-      startDate: new Date(),
-      endDate: new Date(),
-      key: "selection"
-    }
+    value: ""
   };
 
   handleChange = e => {
-    this.setState({ value: e.target.value });
+    this.setState({ [e.target.name]: e.target.value });
   };
 
   render() {
     return (
-      <InputDate
+      <InputNumber
         max={30}
         onChange={this.handleChange}
         name="value"
@@ -30,35 +25,23 @@ class TestInput extends React.Component {
 
 const setup = () => {
   const { container } = render(<TestInput />);
-  const wrapper = container.querySelector(`.input-date`);
-  const input = container.querySelector(`input.form-control`);
+  const input = container.querySelector(`input.form-control[name='value']`);
 
   return {
-    container,
-    wrapper,
     input
   };
 };
 
-test("Should have wrapper with className .form-control", () => {
-  const { wrapper } = setup();
-
-  expect(wrapper).toBeInTheDocument();
-});
-
-test("Should have tag <input> and has className .form-control", () => {
+test("Should able to change value", () => {
   const { input } = setup();
 
-  expect(input).toBeInTheDocument();
+  fireEvent.change(input, { target: { value: 23 } });
+  expect(input.value).toBe("23");
 });
 
-test("Should show date picker when click input field", () => {
-  const { container, input } = setup();
+test("Should not be able to change when reach max value", () => {
+  const { input } = setup();
 
-  //   screen.debug();
-  fireEvent.click(input, { button: 1 });
-  const datePickerWrapper = container.querySelector(`.date-range-wrapper`);
-  //   screen.debug();
-
-  expect(datePickerWrapper).toBeInTheDocument();
+  fireEvent.change(input, { target: { value: 33 } });
+  expect(input.value).toBe("");
 });

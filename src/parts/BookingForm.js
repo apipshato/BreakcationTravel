@@ -6,7 +6,6 @@ import propTypes from "prop-types";
 import Button from "elements/Button";
 import { InputNumber, InputDate } from "elements/Form";
 
-
 class BookingForm extends Component {
   constructor(props) {
     super(props);
@@ -64,7 +63,6 @@ class BookingForm extends Component {
     }
   }
 
-
   render() {
     const { data } = this.state;
     const { itemDetails, startBooking } = this.props;
@@ -88,7 +86,7 @@ class BookingForm extends Component {
           value={data.duration}
         />
 
-<label htmlFor="date">Pick a date</label>
+        <label htmlFor="date">Pick a date</label>
         <InputDate onChange={this.updateData} name="date" value={data.date} />
 
         <h6
@@ -114,7 +112,7 @@ class BookingForm extends Component {
         >
           Continue to Book
         </Button>
-        </div>
+      </div>
     );
   }
 }
@@ -123,5 +121,5 @@ BookingForm.propTypes = {
   startBooking: propTypes.func,
 };
 
-
 export default withRouter('BookingForm');
+
