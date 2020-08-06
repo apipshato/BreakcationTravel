@@ -33,20 +33,18 @@ export default class DetailPage extends Component {
           <div className="row">
             <div className="col-7 pr-5">
               <Fade bottom>
-                <PageDetailDescription
-                  data={ItemDetails}
-                />
+                <PageDetailDescription data={ItemDetails} />
               </Fade>
             </div>
             <div className="col-5">
-            <Fade bottom>
-              <BookingForm itemDetails ={ItemDetails}/>
+              <Fade bottom>
+                <BookingForm itemDetails={ItemDetails} />
               </Fade>
-              </div>
+            </div>
           </div>
         </section>
-        <Catagories data={ItemDetails.categories}/>
-        <Testimony data={ItemDetails.testimonial}/>
+        <Catagories data={ItemDetails.categories} />
+        <Testimony data={ItemDetails.testimonial} />
         <Footer />
       </>
     );
