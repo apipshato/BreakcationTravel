@@ -1,4 +1,4 @@
-@import "../../../assets/scss/colorVariables";
+@import "../../../assets/scss/colorVariable";
 .input-date {
   .input-group {
     background-color: $white;
@@ -14,7 +14,7 @@
       justify-content: center;
       background-color: $gray-900;
       position: absolute;
-      z-index: 999;
+      z-index: 4;
     }
     .form-control {
       border: 0;

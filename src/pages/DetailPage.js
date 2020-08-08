@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Header from "parts/Header";
+import Header from "parts/Header"
 import PageDetailTitle from "parts/PageDetailTitle";
 import ItemDetails from "json/itemDetails.json";
 import FeaturedImage from "parts/FeaturedImage";
@@ -12,7 +12,7 @@ import Testimony from "parts/Testimoni";
 
 export default class DetailPage extends Component {
   componentDidMount() {
-    window.title = "Details Page";
+    window.title = "Detail Page";
     window.scrollTo(0, 0);
   }
 

@@ -5,7 +5,7 @@ import Fade from "react-reveal/Fade";
 import { InputText, InputFile } from "elements/Form";
 
 import logoBca from "assets/images/logo-bca.jpg";
-import logoMandiri from "assets/images/logo-mandiri.jpg";
+import logoMandiri from "assets/images/logo_mandiri.jpg";
 
 
 export default function Payment(props) {

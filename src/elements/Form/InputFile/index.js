@@ -5,7 +5,7 @@ import "./index.scss";
 export default function File(props) {
   const {
     value,
-    type,
+    accept,
     placeholder,
     name,
     append,
