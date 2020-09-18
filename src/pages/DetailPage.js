@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Header from "parts/Header"
+import {connect} from 'react-redux';
 import PageDetailTitle from "parts/PageDetailTitle";
 import ItemDetails from "json/itemDetails.json";
 import FeaturedImage from "parts/FeaturedImage";
@@ -9,8 +10,9 @@ import Fade from "react-reveal/Fade";
 import Footer from "parts/Footer";
 import Catagories from "parts/Catagories";
 import Testimony from "parts/Testimoni";
+import {checkoutBooking} from 'store/actions/checkout';
 
-export default class DetailPage extends Component {
+ class DetailPage extends Component {
   componentDidMount() {
     window.title = "Detail Page";
     window.scrollTo(0, 0);
@@ -38,7 +40,7 @@ export default class DetailPage extends Component {
             </div>
             <div className="col-5">
               <Fade bottom>
-                <BookingForm itemDetails={ItemDetails} />
+                <BookingForm itemDetails={ItemDetails} startBooking={this.props.checkoutBooking}/>
               </Fade>
             </div>
           </div>
@@ -50,3 +52,4 @@ export default class DetailPage extends Component {
     );
   }
 }
+export default connect(null, { checkoutBooking })(DetailPage);
