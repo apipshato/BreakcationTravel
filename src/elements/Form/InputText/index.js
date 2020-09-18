@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import propTypes from "prop-types";
+
 import "./index.scss";
 
 export default function Text(props) {
@@ -8,10 +9,10 @@ export default function Text(props) {
     type,
     placeholder,
     name,
-    append,
     prepend,
-    outerClassname,
-    inputClassname,
+    append,
+    outerClassName,
+    inputClassName,
     errorResponse,
   } = props;
 
@@ -27,10 +28,12 @@ export default function Text(props) {
         value: event.target.value,
       },
     };
+
     if (type === "email") {
       if (!pattern.test(event.target.value)) setHasError(errorResponse);
       else setHasError(null);
     }
+
     if (type === "tel") {
       if (event.target.validity.valid) props.onChange(target);
     } else {
@@ -39,7 +42,7 @@ export default function Text(props) {
   };
 
   return (
-    <div className={["input-text mb-3", outerClassname].join(" ")}>
+    <div className={["input-text mb-3", outerClassName].join(" ")}>
       <div className="input-group">
         {prepend && (
           <div className="input-group-prepend bg-gray-900">
@@ -50,28 +53,26 @@ export default function Text(props) {
           name={name}
           type={type}
           pattern={pattern}
-          className={["form-control", inputClassname].join(" ")}
+          className={["form-control", inputClassName].join(" ")}
           value={value}
           placeholder={placeholder}
           onChange={onChange}
         />
-
         {append && (
           <div className="input-group-append bg-gray-900">
             <span className="input-group-text">{append}</span>
           </div>
         )}
       </div>
-      {HasError && <span className="error-helper">
-          {HasError}
-          </span>}
+      {HasError && <span className="error-helper">{HasError}</span>}
     </div>
   );
 }
+
 Text.defaultProps = {
   type: "text",
-  patrern: "",
-  placeholder: "Please type here. . .",
+  pattern: "",
+  placeholder: "Please type here...",
   errorResponse: "Please match the requested format.",
 };
 
@@ -82,6 +83,7 @@ Text.propTypes = {
   prepend: propTypes.oneOfType([propTypes.number, propTypes.string]),
   append: propTypes.oneOfType([propTypes.number, propTypes.string]),
   type: propTypes.string,
-  outerClassname: propTypes.string,
-  inputClassname: propTypes.string,
+  placeholder: propTypes.string,
+  outerClassName: propTypes.string,
+  inputClassName: propTypes.string,
 };

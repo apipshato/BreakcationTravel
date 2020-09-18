@@ -1,35 +1,34 @@
-import React, { useRef,useState } from "react";
+import React, { useRef, useState } from "react";
 import propTypes from "prop-types";
+
 import "./index.scss";
 
 export default function File(props) {
-
-  const [FileName, setFileName] =useState("")
+  const [FileName, setFileName] = useState("");
   const {
-    
-    accept,
     placeholder,
     name,
-    append,
+    accept,
     prepend,
-    outerClassname,
-    inputClassname,
+    append,
+    outerClassName,
+    inputClassName,
   } = props;
+
   const refInputFile = useRef(null);
-  const onChange =(event) =>{
-    setFileName(event.target.value)
+
+  const onChange = (event) => {
+    setFileName(event.target.value);
     props.onChange({
-      terget: {
+      target: {
         name: event.target.name,
-        value: event.target.files 
-      }
-
-    })
-  }
-
+        value: event.target.files,
+      },
+    });
+  };
 
   return (
-    <div className={["input-text-mb-3", outerClassname].join(" ")}>
+    <div className={["input-text mb-3", outerClassName].join(" ")}>
       <div className="input-group">
         {prepend && (
           <div className="input-group-prepend bg-gray-900">
@@ -49,7 +48,7 @@ export default function File(props) {
           onClick={() => refInputFile.current.click()}
           defaultValue={FileName}
           placeholder={placeholder}
-          className={["form-control", inputClassname].join(" ")}
+          className={["form-control", inputClassName].join(" ")}
         />
         {append && (
           <div className="input-group-append bg-gray-900">
@@ -60,9 +59,11 @@ export default function File(props) {
     </div>
   );
 }
+
 File.defaultProps = {
-  placeholder: "Broswe a file...",
+  placeholder: "Browse a file...",
 };
+
 File.propTypes = {
   name: propTypes.string.isRequired,
   accept: propTypes.string.isRequired,
@@ -70,7 +71,7 @@ File.propTypes = {
   onChange: propTypes.func.isRequired,
   prepend: propTypes.oneOfType([propTypes.number, propTypes.string]),
   append: propTypes.oneOfType([propTypes.number, propTypes.string]),
-  type: propTypes.string,
-  outerClassname: propTypes.string,
-  inputClassname: propTypes.string,
+  placeholder: propTypes.string,
+  outerClassName: propTypes.string,
+  inputClassName: propTypes.string,
 };
