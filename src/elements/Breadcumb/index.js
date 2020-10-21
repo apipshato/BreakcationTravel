@@ -1,9 +1,11 @@
 import React from "react";
-import propType from "prop-types";
-import "./index.scss";
+
+import propTypes from "prop-types";
 import Button from "elements/Button";
 
-export default function Breadcumb(props) {
+import "./index.scss";
+
+export default function Breadcrumb(props) {
   const className = ["breadcrumb", props.className];
   return (
     <nav aria-label="breadcrumb">
@@ -31,7 +33,7 @@ export default function Breadcumb(props) {
   );
 }
 
-Breadcumb.propType = {
-  data: propType.array,
-  className: propType.string,
+Breadcrumb.propTypes = {
+  data: propTypes.array,
+  className: propTypes.string
 };
