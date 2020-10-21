@@ -14,7 +14,7 @@
       justify-content: center;
       background-color: $gray-900;
       position: absolute;
-      z-index: 4;
+      z-index: 999;
     }
     .form-control {
       border: 0;
@@ -35,7 +35,7 @@
       position: absolute;
       border-radius: 4px;
       top: 45px;
-      z-index: 5;
+      z-index: 99;
     }
   }
 }
