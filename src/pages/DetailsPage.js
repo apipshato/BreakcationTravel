@@ -25,7 +25,8 @@ class DetailsPage extends Component {
           this.props.match.params.id
         )
         .then((response) => {
-          document.title = `Staycation | ${response.title}`;
+          
+          // document.title = `Breakcation| ${response.title}`;
         });
   }
 
